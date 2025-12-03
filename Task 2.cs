@@ -5,8 +5,6 @@ class Task2
     static void Main()
     {
         
-       // Row  0: Even numbers
-        //Row  1: Odd numbers
         
         int[][] numberMatrix = new int[][]
 
