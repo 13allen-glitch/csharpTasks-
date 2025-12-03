@@ -7,8 +7,7 @@ class ReportCard
         Console.Write("Enter Total Students : ");
         int totalStudents = Convert.ToInt32(Console.ReadLine());
 
-        // Multi-dimensional array: [rows, columns]
-        // Columns: 0 = Name, 1 = English, 2 = Math, 3 = Computer, 4 = Total
+        
         string[,] students = new string[totalStudents, 5];
 
         
@@ -40,7 +39,7 @@ class ReportCard
 
                 if (total_j > total_i)
                 {
-                    // Swap entire rows
+                    
                     for (int k = 0; k < 5; k++)
                     {
                         string temp = students[i, k];
@@ -51,7 +50,7 @@ class ReportCard
             }
         }
 
-        // OUTPUT REPORT
+        
         Console.WriteLine("****************Report Card*******************");
 
         for (int i = 0; i < totalStudents; i++)
@@ -64,7 +63,7 @@ class ReportCard
         Console.WriteLine("****************************************");
     }
 
-    // Method to get valid marks between 0–100
+    
     static string GetValidMarks(string message)
     {
         int marks;
@@ -74,14 +73,14 @@ class ReportCard
             Console.Write(message);
             string input = Console.ReadLine();
 
-            // Check if number
+           
             if (!int.TryParse(input, out marks))
             {
                 
                 continue;
             }
 
-            // Check range
+            
             if (marks < 0 || marks > 100)
             {
             
