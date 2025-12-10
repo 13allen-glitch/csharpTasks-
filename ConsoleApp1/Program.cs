@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿namespace ConsoleApp1.Tasks;
 class Task1
 {
     static void Main(string[] args)

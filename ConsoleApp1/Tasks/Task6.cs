@@ -1,8 +1,8 @@
-using System;
+namespace ConsoleApp1.Tasks;
 
 class Student
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public int Age { get; set; }
     public double Grade { get; set; }
 
@@ -25,7 +25,7 @@ class Task6
     {
         Student s = new Student();
 
-        s.Name = "Marco";
+        s.Name = "Damien";
         s.Age = 20;
         s.Grade = 85.5;
 

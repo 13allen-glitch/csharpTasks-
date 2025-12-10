@@ -1,20 +1,19 @@
-using System;
+namespace ConsoleApp1.Tasks;
 
-class ReportCard
+class Task5
 {
     static void Main()
     {
         Console.Write("Enter Total Students : ");
-        int totalStudents = Convert.ToInt32(Console.ReadLine());
+        string? tsInput = Console.ReadLine();
+        int totalStudents = Convert.ToInt32(tsInput ?? "0");
 
-        
         string[,] students = new string[totalStudents, 5];
 
-        
         for (int i = 0; i < totalStudents; i++)
         {
             Console.Write("Enter Student Name : ");
-            students[i, 0] = Console.ReadLine();
+            students[i, 0] = Console.ReadLine() ?? "";
 
             students[i, 1] = GetValidMarks("Enter English Marks (Out Of 100) : ");
             students[i, 2] = GetValidMarks("Enter Math Marks (Out Of 100) : ");
@@ -29,7 +28,6 @@ class ReportCard
             Console.WriteLine("*********************************************");
         }
 
-        
         for (int i = 0; i < totalStudents - 1; i++)
         {
             for (int j = i + 1; j < totalStudents; j++)
@@ -39,7 +37,6 @@ class ReportCard
 
                 if (total_j > total_i)
                 {
-                    
                     for (int k = 0; k < 5; k++)
                     {
                         string temp = students[i, k];
@@ -50,7 +47,6 @@ class ReportCard
             }
         }
 
-        
         Console.WriteLine("****************Report Card*******************");
 
         for (int i = 0; i < totalStudents; i++)
@@ -63,7 +59,6 @@ class ReportCard
         Console.WriteLine("****************************************");
     }
 
-    
     static string GetValidMarks(string message)
     {
         int marks;
@@ -71,38 +66,15 @@ class ReportCard
         while (true)
         {
             Console.Write(message);
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
-           
             if (!int.TryParse(input, out marks))
-            {
-                
                 continue;
-            }
 
-            
             if (marks < 0 || marks > 100)
-            {
-            
                 continue;
-            }
 
             return marks.ToString();
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
